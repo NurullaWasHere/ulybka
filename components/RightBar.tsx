@@ -24,7 +24,13 @@ export const RightBar: FC = () => {
         setId(employer)
     }, [])
    
-
+    const onClose = () => {
+        if(typeof window !== 'undefined'){
+            window.localStorage.removeItem('token')
+            router.push('/login')
+        }
+    }
+    
     return (
         <div className="mt-7 mr-7">
             <Menu>
@@ -34,7 +40,7 @@ export const RightBar: FC = () => {
             <MenuList>
                 <MenuGroup title='Profile'>
                 <MenuItem onClick={ () => router.push(`/employer/${id}`)}>Мой профиль</MenuItem>
-
+                 <MenuItem onClick={onClose}> Выйти</MenuItem>   
                 </MenuGroup>
                 <MenuDivider />
             </MenuList>
