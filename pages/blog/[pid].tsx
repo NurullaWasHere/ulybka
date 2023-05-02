@@ -2,7 +2,7 @@ import { Blog } from '@/types'
 import {FC, useState} from 'react'
 import {axiosInstance} from '../../axios'
 import { Input, Textarea, Button} from '@chakra-ui/react'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import { Resolver, useForm } from 'react-hook-form'
 
 
@@ -66,7 +66,21 @@ const Blog:FC<IBlog> = ( {blog}) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+
+export async function getStaticPaths() {
+    const res = []
+    for (let i = 1; i < 15; i++) {
+        res.push({ params: { pid: `${i}` } })        
+    }
+
+    return {
+      paths: res,
+      fallback: false, // can also be true or 'blocking'
+    }
+  }
+  
+
+export const getStaticProps: GetStaticProps = async (context) => {
         
         const res = await axiosInstance.get(`/blog/getBlogByParams/${context.params?.pid}`)
         
