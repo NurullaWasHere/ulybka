@@ -39,7 +39,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
     const router = useRouter()
     console.log(sorted)
         return (
-        <div className='mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-col'>
+        <div className='mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-col py-4 px-4'>
             <div className="flex flex-row justify-around">
                 <HStack spacing={4}>
                     {Array.from({length: Number(amount)}).map((size, index) => (

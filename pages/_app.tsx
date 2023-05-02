@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
     <ChakraProvider>
-      <div className='flex flex-row gap-x-3 '>
+      <div className='flex flex-row gap-x-3 min-h-[100vh] bg-gray-200'>
       {router.pathname !== '/login' && <><Sidebar/></>}
       <Component {...pageProps}/>
       {router.pathname !== '/login' && <><RightBar/></>}

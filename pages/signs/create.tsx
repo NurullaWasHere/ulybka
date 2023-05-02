@@ -52,7 +52,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
     return (
-        <div className="mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-col">
+        <div className="mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-col py-4 px-4">
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
                 <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Открыть запись</h1>
             <RadioGroup onChange={setValue} value={String(value)} className="w-3/5 flex flex-row justify-between">

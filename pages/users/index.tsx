@@ -39,8 +39,8 @@ const Users: FC = () => {
     }, [])
 
     return (
-        <div className='mt-9 bg-white w-4/5 border-l border-gray-400'>
-            <TableContainer>
+  <div className='mt-9 bg-white w-4/5 border-l border-gray-400 px-4 py-4'>
+  <TableContainer>
   <Table variant='simple'>
     <TableCaption>Данный о пользвательях</TableCaption>
     <Thead>

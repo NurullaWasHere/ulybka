@@ -53,7 +53,7 @@ const CreateProduct: FC<IEmpProps> = ({wares}) => {
 
 
     return (
-        <div className='w-4/5 bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6'>
+        <div className='w-4/5 bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 bg-white px-4 py-4'>
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
                 <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Добавить товар в базу</h1>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>

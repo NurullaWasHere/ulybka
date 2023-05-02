@@ -12,6 +12,9 @@ export default function Home() {
     if(!token){
       router.push('/login')
     }
+    if(token){
+      router.push('/users')
+    }
   }
   return (
     <div>

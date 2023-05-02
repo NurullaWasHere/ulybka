@@ -32,7 +32,7 @@ export const RightBar: FC = () => {
     }
     
     return (
-        <div className="mt-7 mr-7">
+        <div className="mt-9 mr-7">
             <Menu>
             <MenuButton as={Button} colorScheme='pink'>
                 Мой профиль
