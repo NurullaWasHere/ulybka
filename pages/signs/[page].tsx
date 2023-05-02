@@ -106,6 +106,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const res = await axios.get(`https://diploma-production.up.railway.app/api/sign/getSignsSortedByDate/${context.params?.page}`)
     const amount = await axios.get(`https://diploma-production.up.railway.app/api/sign/getAmountOfPages`)
+    console.log(res, amount)
     return {
         props: {
             sorted: res.data.result,
