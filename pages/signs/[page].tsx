@@ -13,9 +13,8 @@ import {
     Button
   } from '@chakra-ui/react'
 import { GetServerSideProps } from "next";
-// import { axiosInstance } from "../../axios";
+import { axiosInstance } from "../../axios";
 import { useRouter } from "next/router";
-import axios from "axios";
 
 interface IResponse{
     sorted: ISortedSignResponse[],
@@ -103,16 +102,28 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const res = await axios.get(`https://diploma-production.up.railway.app/api/sign/getSignsSortedByDate/${context.params?.page}`)
-    const amount = await axios.get(`https://diploma-production.up.railway.app/api/sign/getAmountOfPages`)
-    console.log(res, amount)
-    return {
-        props: {
-            sorted: res.data.result,
-            amount: amount.data.amount + 1
-        }
+export async function getStaticPaths() {
+    const res = []
+    for (let i = 1; i < 100; i++) {
+        res.push({ params: { page: i } })        
     }
-}
+
+    return {
+      paths: res,
+      fallback: false, // can also be true or 'blocking'
+    }
+  }
+  
+
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//     const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
+//     const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
+//     return {
+//         props: {
+//             sorted: res.data.result,
+//             amount: amount.data.amount + 1
+//         }
+//     }
+// }
 
 export default Sign 
