@@ -68,13 +68,14 @@ const Blog:FC<IBlog> = ( {blog}) => {
 
 
 export async function getStaticPaths() {
-    const res = []
-    for (let i = 1; i < 15; i++) {
-        res.push({ params: { pid: `${i}` } })        
-    }
+    const res = await axiosInstance.get('/blog/getAllBlogs')
+
+    const paths = res.data.blogs.map((blog: any) => ({
+    params: { pid: `${blog.id}` },
+  }))
 
     return {
-      paths: res,
+      paths,
       fallback: false, // can also be true or 'blocking'
     }
   }
@@ -84,7 +85,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         
         const res = await axiosInstance.get(`/blog/getBlogByParams/${context.params?.pid}`)
         
-        return { props: {blog: res.data.blog}}
+        return { props: {blog: res.data.blog || null}}
 }
 
 export default Blog
