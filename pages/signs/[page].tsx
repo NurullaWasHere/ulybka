@@ -12,7 +12,7 @@ import {
     HStack,
     Button
   } from '@chakra-ui/react'
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { axiosInstance } from "../../axios";
 import { useRouter } from "next/router";
 
@@ -105,7 +105,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
 export async function getStaticPaths() {
     const res = []
     for (let i = 1; i < 100; i++) {
-        res.push({ params: { page: i } })        
+        res.push({ params: { page: `${i}` } })        
     }
 
     return {
@@ -115,15 +115,15 @@ export async function getStaticPaths() {
   }
   
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//     const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
-//     const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
-//     return {
-//         props: {
-//             sorted: res.data.result,
-//             amount: amount.data.amount + 1
-//         }
-//     }
-// }
+export const getStaticProps: GetStaticProps = async (context) => {
+    const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
+    const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
+    return {
+        props: {
+            sorted: res.data.result,
+            amount: amount.data.amount + 1
+        }
+    }
+}
 
 export default Sign 
