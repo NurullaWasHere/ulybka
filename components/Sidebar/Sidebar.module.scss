@@ -1,0 +1,38 @@
+.sideMain{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+
+    padding: 9px 14px;
+    background-color: white;
+    margin: 15px 25px;
+    gap: 25px;
+    margin-top: 40px;
+    .sideElem{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;;
+        border: 1px solid white;
+        border-radius: 12px;
+        img{
+            width: 25px;
+            height: 25px;
+        }
+        transition: 0.2s ease-in-out;
+        &:hover{ 
+            background-color: rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .linkElem{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
