@@ -13,8 +13,9 @@ import {
     Button
   } from '@chakra-ui/react'
 import { GetServerSideProps } from "next";
-import { axiosInstance } from "../../axios";
+// import { axiosInstance } from "../../axios";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 interface IResponse{
     sorted: ISortedSignResponse[],
@@ -103,8 +104,8 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
-    const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
+    const res = await axios.get(`https://diploma-production.up.railway.app/api/sign/getSignsSortedByDate/${context.params?.page}`)
+    const amount = await axios.get(`https://diploma-production.up.railway.app/api/sign/getAmountOfPages`)
     return {
         props: {
             sorted: res.data.result,
