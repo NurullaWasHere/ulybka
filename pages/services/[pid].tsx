@@ -4,6 +4,7 @@ import {axiosInstance} from '../../axios'
 import { useRouter } from 'next/router'
 import {Image} from '@chakra-ui/react'
 import { ServiceCard } from '@/components/ServiceCard/ServiceCard'
+import { GetServerSideProps } from 'next'
 
 const Service:FC = () => {
 

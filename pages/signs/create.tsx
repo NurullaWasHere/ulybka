@@ -35,9 +35,9 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
         console.log(result.service_id)
         await axiosInstance
           .post("/sign/createSign", {
-            service_id: value === '2' ? result.service_id : null,
+            service_id: value === '1' ? result.service_id : null,
             signDate: result.signDate,
-            employerId: value === '1' ? result.employerId : null
+            employerId: value === '2' ? result.employerId : null
           })
           .then( ( res ) => {
             console.log(res.data)
