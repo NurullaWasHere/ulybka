@@ -57,11 +57,11 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                 <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Открыть запись</h1>
             <RadioGroup onChange={setValue} value={String(value)} className="w-3/5 flex flex-row justify-between">
                 <Stack direction='row'>
-                    <Radio value='1'>Для сервиса</Radio>
-                    <Radio value='2'>Для врача</Radio>
+                    <Radio value='1'>Для врача</Radio>
+                    <Radio value='2'>Для сервиса</Radio>
                 </Stack>
                 </RadioGroup>
-                {value === '2' &&                 
+                {value === '1' &&                 
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
                     <h1 className='font-normal text-lg px-4 py-2'>Выберите работника</h1>
                         <Select {...register('service_id')} defaultValue={undefined}>
@@ -72,7 +72,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                             })}
                         </Select>
                 </div>}
-                {value === '1' && 
+                {value === '2' && 
                             <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
                                 <h1 className='font-normal text-lg px-4 py-2'>Выберите сервис</h1>
                                 <Select {...register('employerId')} defaultValue={undefined}>
