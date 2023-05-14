@@ -35,9 +35,9 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
         console.log(result.service_id)
         await axiosInstance
           .post("/sign/createSign", {
-            service_id: value === '1' ? result.service_id : null,
+            service_id: value === '2' ? result.service_id : null,
             signDate: result.signDate,
-            employerId: value === '2' ? result.employerId : null
+            employerId: value === '1' ? result.employerId : null
           })
           .then( ( res ) => {
             console.log(res.data)
@@ -64,7 +64,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                 {value === '1' &&                 
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
                     <h1 className='font-normal text-lg px-4 py-2'>Выберите работника</h1>
-                        <Select {...register('service_id')} defaultValue={undefined}>
+                        <Select {...register('employerId')} defaultValue={undefined}>
                             {employers.map( (el,index) => {
                                 return (
                                     <option key={index} value={Number(el.id)}>{el.firstname + " " + el.lastname}</option>
@@ -75,7 +75,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                 {value === '2' && 
                             <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
                                 <h1 className='font-normal text-lg px-4 py-2'>Выберите сервис</h1>
-                                <Select {...register('employerId')} defaultValue={undefined}>
+                                <Select {...register('service_id')} defaultValue={undefined}>
                                     {services.map( (el,index) => {
                                         return (
                                             <option key={index} value={Number(el.id)}>{el.name}</option>
