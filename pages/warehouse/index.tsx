@@ -58,7 +58,7 @@ const Warehouse: FC<IWarehouse> = ({products}) => {
     // }, [])
 
     return (
-        <div className='mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-row gap-4 px-4 py-4'>
+        <div className='mt-9 bg-white w-4/5 rounded-lg border-gray-400 flex flex-row gap-4 px-4 py-4'>
             <div className='border-r rounded-lg w-1/5 p-x-4 flex flex-col gap-4'>
                 <Menu>
                     <MenuButton as={Button} >
