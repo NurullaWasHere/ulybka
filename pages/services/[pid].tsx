@@ -29,7 +29,7 @@ const Service:FC = () => {
     
 
     return (
-        <div className='w-4/5 bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 ml-5'>
+        <div className='w-4/5 bg-white border-l border-gray-300 mt-7 flex flex-row gap-6 ml-5'>
             <div className="flex flex-col gap-5 ml-7">
                 <Image src={String(service?.service_image)} alt="Клиент" borderRadius='lg' width={400}/>
                 {
