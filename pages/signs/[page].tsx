@@ -28,6 +28,7 @@ interface ISortedSignResponse{
 }
 
 interface IUser_id {
+    id:Number,
     user_id: Number,
     signDate: Date,
     phone: String,
@@ -37,7 +38,6 @@ interface IUser_id {
 
 const Sign: FC<IResponse> = ({sorted, amount}) => {
     const router = useRouter()
-    console.log(sorted)
         return (
         <div className='mt-9 bg-white w-4/5 rounded-lg border-gray-400 flex flex-col py-4 px-4'>
             <div className="flex flex-row justify-around">
@@ -85,7 +85,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                                         <Td >{new Date(String(del.signDate)).toLocaleTimeString()}</Td>
                                         <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ async () => {
                                             //@ts-ignore
-                                            await axiosInstance.delete('/sign/deleteSign', {signDate: del.signDate})
+                                            await axiosInstance.delete('/sign/deleteSign', {id: del.id})
                                         }}>Удалить</Td>
                                     </Tr>
                                 </>
@@ -98,6 +98,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
             })}
         </Table>
         </TableContainer>
+        {/* <h3 className="absolute top-2.5 right-2.5 text-red-600"> Запись успешно удалена! </h3> */}
         </div>
     )
 }
