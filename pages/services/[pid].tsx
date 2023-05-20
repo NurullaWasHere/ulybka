@@ -35,7 +35,7 @@ const Service:FC = () => {
                 {
                     settings.map( (el, index) => {
                         return (
-                        <div key={index} onClick={ () => setActive(index)} className={"flex flex-row items-center gap-2 cursor-pointer hover:bg-gray-100 py-2 px-5 rounded-lg " + (active === index ? "bg-gray-200 hover:bg-gray-200" : "null")}>
+                        <div key={index} onClick={ () => setActive(index)} className={"flex flex-row bg-white items-center gap-2 cursor-pointer hover:bg-gray-100 py-2 px-5 rounded-lg " + (active === index ? "bg-gray-200 hover:bg-gray-200" : "null")}>
                             <Image src={el.image} width={25} height={25} alt="Иконка"></Image>
                             <p>{el.name}</p>
                         </div>

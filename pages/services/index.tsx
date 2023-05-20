@@ -28,7 +28,7 @@ const Services: FC = () => {
     }, [])
     const settings = [{name: "Все сервисы", image: "/user.png"}, {name: 'Создать сервис', image:"/time.png"}]
     return (
-        <div className='w-4/5 bg-whte rounded-lg border-gray-300 mt-10 flex flex-row gap-6 ml-5 items-center bg-white'>
+        <div className='w-4/5 bg-whte rounded-lg border-gray-300 mt-10 flex flex-row gap-6 ml-5 bg-white'>
             <div className="flex flex-col gap-5 ml-7 mt-10">
             {
                     settings.map( (el, index) => {
@@ -41,9 +41,9 @@ const Services: FC = () => {
                     })
                 }
             </div>
-        <div className='flex flex-col'>
-            <h1 className='font-semibold text-2xl'> Существующие сервисы</h1>
-        <div className=' bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 ml-5'>
+            <div className='flex flex-col flex-wrap w-full h-full'>
+                <h1 className='font-semibold text-2xl mt-5'> Существующие сервисы</h1>
+            <div className=' bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 ml-5 flex-wrap'>
         {services.map( (el, index) => {
                 return (
                 <Card maxW='sm' key={index}>
