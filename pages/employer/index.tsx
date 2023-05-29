@@ -42,15 +42,15 @@ const Employers: FC = () => {
         <div className='mt-9 bg-white w-4/5 rounded-lg border-gray-400 px-4 py-4'>
             <TableContainer>
   <Table variant='simple'>
-    <TableCaption>Данные о работниках</TableCaption>
+    <TableCaption>Жұмыскерлер туралы ақпарат</TableCaption>
     <Thead>
       <Tr>
         <Th isNumeric>id</Th>
-        <Th>ФИО работника</Th>
-        <Th>Должность</Th>
-        <Th>Номер телефона</Th>
+        <Th>Аты жөні</Th>
+        <Th>Қызметі</Th>
+        <Th>Телефон номері</Th>
         <Th>Почта</Th>
-        <Th>Пароль</Th>
+        <Th>Құпиясөз</Th>
       </Tr>
     </Thead>
     <Tbody>

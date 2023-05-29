@@ -57,38 +57,38 @@ const CreateProduct: FC<IEmpProps> = ({wares}) => {
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
                 <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Добавить товар в базу</h1>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>НАЗВАНИЕ </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>АТАУЫ </h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("name", { min: 4 })}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>СЕРИЙНЫЙ НОМЕР</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>СЕРИЯЛЫҚ НОМЕР</h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("serial_number")}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>СРОК ПРОИЗВОДСТВА	 </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>ШЫҒАРЫЛУ МЕРЗІМІ	 </h1>
                     <Input type="datetime-local" id=""  size={'sm'} width={'xs'} {...register("created_date")}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>СРОК ГОДНОСТИ</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>ЖАРАМДЫЛЫҚ МЕРЗІМІ</h1>
                     <Input type="datetime-local" id=""  size={'sm'} width={'xs'} {...register("expiration_date")}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>В НАЛИЧИЙ</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>ҚАЗІР БАР</h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("amount")}/>
                 </div>
                 <div className='flex flex-row gap-5 w-4/5 border-b border-gray-300 rounded-lg  justify-between py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Выбрать склад: </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>Қойма: </h1>
                     <Select {...register('WareId')}>
                         {wares.map( (el,index) => {
                             return (
-                                <option key={index} value={Number(el.id)}>Склад №{Number(el.id)}</option>
+                                <option key={index} value={Number(el.id)}>Қойма №{Number(el.id)}</option>
                             )
                         })}
                     </Select>
                 </div>
                 <div className='flex flex-col gap-5 w-4/5 border-b border-gray-300 rounded-lg  items-center py-4'>
-                {done && <p className='text-green-500 text-lg'>Запрос совершен!</p>}
-                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Создать</p></Button>         
+                {done && <p className='text-green-500 text-lg'>Ақпарат жіберілді!</p>}
+                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Ашу</p></Button>         
                 </div>
             </form>
         </div>

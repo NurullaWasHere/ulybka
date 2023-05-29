@@ -51,15 +51,15 @@ const CreateBlog: FC<IEmpProps> = ({employers}) => {
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
                 <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Создать блог</h1>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Название блога</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>Блог атауы</h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("name", { min: 4 })}/>
                 </div>
                 <div className='flex flex-row gap-5 w-4/5 border-b border-gray-300 rounded-lg  justify-between py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Описание</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>Мазмұны</h1>
                     <Textarea  size='sm' height={'2xl'} {...register("description", { min: 4 })}/>
                 </div>
                 <div className='flex flex-row gap-5 w-4/5 border-b border-gray-300 rounded-lg  justify-between py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Выбрать автора: </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'> Автор: </h1>
                     <Select {...register('author_name')}>
                         {employers.map( (el,index) => {
                             return (
@@ -69,8 +69,8 @@ const CreateBlog: FC<IEmpProps> = ({employers}) => {
                     </Select>
                 </div>
                 <div className='flex flex-col gap-5 w-4/5 border-b border-gray-300 rounded-lg  items-center py-4'>
-                {done && <p className='text-green-500 text-lg'>Запрос совершен!</p>}
-                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Создать</p></Button>         
+                {done && <p className='text-green-500 text-lg'>Өзгеріс жіберілді!</p>}
+                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Ашу</p></Button>         
                 </div>
             </form>
         </div>

@@ -38,6 +38,7 @@ interface IUser_id {
 
 const Sign: FC<IResponse> = ({sorted, amount}) => {
     const router = useRouter()
+    console.log(sorted)
         return (
         <div className='mt-9 bg-white w-4/5 rounded-lg border-gray-400 flex flex-col py-4 px-4'>
             <div className="flex flex-row justify-around">
@@ -49,7 +50,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                     ))}
                 </HStack>
                 
-                <Button onClick={ () =>  router.push('/signs/create')}>Открыть запись</Button>
+                <Button onClick={ () =>  router.push('/signs/create')}>Жазылым ашу</Button>
 
             </div>
         <TableContainer>
@@ -59,8 +60,8 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                     <>
                     <Thead>
                     <Tr>
-                        <Th>Дата: </Th>
-                        <Th>Номер телефона: </Th>
+                        <Th>Уақыты: </Th>
+                        <Th>Телефон номері: </Th>
                         <Th>{String(el.signDate)}</Th>
                     </Tr>
                     </Thead>
@@ -86,7 +87,8 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                                         <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ async () => {
                                             //@ts-ignore
                                             await axiosInstance.delete('/sign/deleteSign', {data: {id: del.id}})
-                                        }}>Удалить</Td>
+                                            console.log(del.id)
+                                        }}>Өшіру</Td>
                                     </Tr>
                                 </>
                             )

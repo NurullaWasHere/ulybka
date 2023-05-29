@@ -35,12 +35,12 @@ export const RightBar: FC = () => {
         <div className="mt-9 mr-7">
             <Menu>
             <MenuButton as={Button} colorScheme='pink'>
-                Мой профиль
+                Менің парақшам
             </MenuButton>
             <MenuList>
                 <MenuGroup title='Profile'>
-                <MenuItem onClick={ () => router.push(`/employer/${id}`)}>Мой профиль</MenuItem>
-                 <MenuItem onClick={onClose}> Выйти</MenuItem>   
+                <MenuItem onClick={ () => router.push(`/employer/${id}`)}> Менің парақшам</MenuItem>
+                 <MenuItem onClick={onClose}> Шығу</MenuItem>   
                 </MenuGroup>
                 <MenuDivider />
             </MenuList>

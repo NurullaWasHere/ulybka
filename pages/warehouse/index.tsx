@@ -62,21 +62,21 @@ const Warehouse: FC<IWarehouse> = ({products}) => {
             <div className='border-r rounded-lg w-1/5 p-x-4 flex flex-col gap-4'>
                 <Menu>
                     <MenuButton as={Button} >
-                        Склады
+                        Қоймалар
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>Склад №1</MenuItem>
+                        <MenuItem>Қойма №1</MenuItem>
                     </MenuList>
                 </Menu>
-                <Button onClick={ () => router.push('/warehouse/create')}>Добавить лекарство в склад</Button>
+                <Button onClick={ () => router.push('/warehouse/create')}>Қоймаға дәріні қосу</Button>
                 <Popover>
                     <PopoverTrigger>
-                        <Button>Удалить лекарство из склада</Button>
+                        <Button>Қоймадан дәріні алу</Button>
                     </PopoverTrigger>
                     <Portal>
                         <PopoverContent>
                         <PopoverArrow />
-                        <PopoverHeader>Введите айди лекарство</PopoverHeader>
+                        <PopoverHeader>Дәрі айдиін енгізіңіз</PopoverHeader>
                         <PopoverCloseButton />
                         <PopoverBody className='flex flex-row gap-1'>
                             <Input onChange={ (e) => {setlid(+e.target.value)}}/>
@@ -89,15 +89,15 @@ const Warehouse: FC<IWarehouse> = ({products}) => {
             <div>
                 <TableContainer>
                     <Table variant='simple'>
-                        <TableCaption>Лекарства в складе</TableCaption>
+                        <TableCaption>Қоймадағы дәрілер</TableCaption>
                         <Thead>
                         <Tr>
-                            <Th isNumeric>id лекарства</Th>
-                            <Th>Название</Th>
-                            <Th>Серийный номер</Th>
-                            <Th>Срок производства</Th>
-                            <Th>Срок годности</Th>
-                            <Th>В наличий</Th>
+                            <Th isNumeric>id</Th>
+                            <Th>Атауы</Th>
+                            <Th>Сериялық номер</Th>
+                            <Th>Шығарылу мерзімі</Th>
+                            <Th>Жарамдылық мерзімі</Th>
+                            <Th>Қазір бар</Th>
                         </Tr>
                         </Thead>
                         <Tbody>

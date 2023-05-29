@@ -54,16 +54,16 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
     return (
         <div className="mt-9 bg-white w-4/5 border-l border-gray-400 flex flex-col py-4 px-4">
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
-                <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Открыть запись</h1>
+                <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Жазылым ашу</h1>
             <RadioGroup onChange={setValue} value={String(value)} className="w-3/5 flex flex-row justify-between">
                 <Stack direction='row'>
-                    <Radio value='1'>Для врача</Radio>
-                    <Radio value='2'>Для сервиса</Radio>
+                    <Radio value='1'>Дәрігер үшін</Radio>
+                    <Radio value='2'>Қызмет  үшін</Radio>
                 </Stack>
                 </RadioGroup>
                 {value === '1' &&                 
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Выберите работника</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>Жұмыскерді таңдаңыз</h1>
                         <Select {...register('employerId')} defaultValue={undefined}>
                             {employers.map( (el,index) => {
                                 return (
@@ -74,7 +74,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                 </div>}
                 {value === '2' && 
                             <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                                <h1 className='font-normal text-lg px-4 py-2'>Выберите сервис</h1>
+                                <h1 className='font-normal text-lg px-4 py-2'>Қызмет түрін таңдаңыз</h1>
                                 <Select {...register('service_id')} defaultValue={undefined}>
                                     {services.map( (el,index) => {
                                         return (
@@ -85,7 +85,7 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                             </div>
                             }
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>Выберите дату</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>Уақытты таңдаңыз</h1>
                     <Input type="datetime-local" id=""  size={'sm'} width={'xs'} {...register("signDate", { min: 4 })}/>
                 </div>
         
@@ -100,8 +100,8 @@ const CreateSign:FC<ICreateSign> = ({services, employers}) => {
                     </Select>
                 </div> */}
                 <div className='flex flex-col gap-5 w-4/5 border-b border-gray-300 rounded-lg  items-center py-4'>
-                {done && <p className='text-green-500 text-lg'>Запрос совершен!</p>}
-                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Создать</p></Button>         
+                {done && <p className='text-green-500 text-lg'>Ақпарат жіберілді!</p>}
+                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Ашу</p></Button>         
                 </div>
             </form>
         </div>

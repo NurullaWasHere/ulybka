@@ -47,8 +47,8 @@ export const UserHistory = ({id}: forId) => {
                 <Thead>
                     <Tr>
                         <Td>ID</Td>
-                        <Td>Врач</Td>
-                        <Td>Дата посещения</Td>
+                        <Td>Дәрігер</Td>
+                        <Td>Көрінген уақыты</Td>
                     </Tr>
                 </Thead>
                 {hists.map( (el,index) => {

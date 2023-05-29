@@ -42,15 +42,15 @@ const Users: FC = () => {
   <div className='mt-9 bg-white w-4/5  border-gray-400 px-4 py-4 rounded-lg'>
   <TableContainer>
   <Table variant='simple'>
-    <TableCaption>Данный о пользвательях</TableCaption>
+    <TableCaption>Клиенттер ақпараты</TableCaption>
     <Thead>
       <Tr>
         <Th isNumeric>id</Th>
-        <Th>ФИО клиента</Th>
-        <Th>ИИН</Th>
-        <Th>Номер телефона</Th>
+        <Th>Аты жөні</Th>
+        <Th>ЖСН</Th>
+        <Th>Телефон номері</Th>
         <Th>Почта</Th>
-        <Th>Пароль</Th>
+        <Th>Құпиясөз</Th>
       </Tr>
     </Thead>
     <Tbody>

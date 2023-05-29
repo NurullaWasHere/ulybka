@@ -42,7 +42,7 @@ const Services: FC = () => {
                 }
             </div>
             <div className='flex flex-col flex-wrap w-full h-full'>
-                <h1 className='font-semibold text-2xl mt-5'> Существующие сервисы</h1>
+                <h1 className='font-semibold text-2xl mt-5'> Қызмет түрлері</h1>
             <div className=' bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 ml-5 flex-wrap'>
         {services.map( (el, index) => {
                 return (
@@ -61,7 +61,7 @@ const Services: FC = () => {
                         </Text>
                         <div className='flex flex-row gap-4'>
                             <Text fontSize='2xl'>
-                                Цена со скидкой - <>{el.discount}</>%
+                                БАҒАСЫ - <>{el.discount}</>%
                             </Text>
                             <Text color='red.600' fontSize='2xl'>
                                 ${<>{el.price}</>}
@@ -74,7 +74,7 @@ const Services: FC = () => {
                 <CardFooter>
                     <ButtonGroup spacing='1' className='flex flex-row gap-5'>
                     <Button variant='solid' colorScheme='blue' onClick={() => router.push(`/services/${el.id}`)}>
-                        Настроить
+                        Өзгерту
                     </Button>
                     </ButtonGroup>
                 </CardFooter>

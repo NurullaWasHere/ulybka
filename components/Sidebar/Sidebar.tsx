@@ -8,17 +8,17 @@ import Link from 'next/link'
 export const Sidebar: FC = () => {
   return (
     <div className={s.sideMain}>
-        <h2 className='font-semibold text-lg'>Админ панель</h2>
+        <h2 className='font-semibold text-lg'>Менеджер панелі</h2>
             <Link href={"/users"} className={s.sideElem}>
         <div className={s.linkElem}>
             <Image src="/user.png" alt="" width={25} height={25}/>
-            <p>Пользватели</p>
+            <p>Клиенттер</p>
         </div>
             </Link>
             <Link href={'/services'} className={s.sideElem} >
         <div className={s.linkElem} >
             <Image src="/service.png" alt="" width={25} height={25}/>
-            <p>Сервисы</p>
+            <p>Қызмет түрлері</p>
         </div>
             </Link>
             <Link href={'/blog'} className={s.sideElem}>
@@ -30,19 +30,19 @@ export const Sidebar: FC = () => {
         <Link href={'/signs/1'} className={s.sideElem}>
         <div className={s.linkElem}>
             <Image src="/sign.png" alt="" width={25} height={25}/>
-            <p>Записи</p>
+            <p>Жазылымдар</p>
         </div>
         </Link>
         <Link href={'/employer'} className={s.sideElem}>
         <div className={s.linkElem}>
             <Image src="/employee.png" alt="" width={25} height={25}/>
-            <p>Сотрудники</p>        
+            <p>Жұмыскерлер</p>        
         </div>
         </Link>
                 <Link href={'/warehouse'} className={s.sideElem}>       
         <div className={s.linkElem}>
                 <Image src="/warehouse.png" alt="" width={25} height={25}/>
-            <p>Склад</p>
+            <p>Қойма</p>
         </div>
                 </Link>
     </div>

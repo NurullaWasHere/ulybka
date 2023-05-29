@@ -48,27 +48,27 @@ const CreateService: FC = () => {
     return (
         <div className='w-4/5 bg-whte border-l border-gray-300 mt-7 flex flex-row gap-6 bg-white py-4'>
             <form className='w-4/5  flex flex-col gap-6 ml-10'onSubmit={handleSubmit(onSubmit)} >
-                <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Добавить сервис в базу</h1>
+                <h1 className='flex flex-row justify-center font-medium text-xl border-b border-gray-300 pb-2'>Қызмет түрін ашу</h1>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>НАЗВАНИЕ </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>АТАУЫ </h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("name", { min: 4 })}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>ЦЕНА СЕРВИСА</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>ҚЫЗМЕт БАҒАСЫ</h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("price")}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>СКИДКА	 </h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>ЖЕҢІЛДіК	 </h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("discount")}/>
                 </div>
                 <div className='flex flex-row gap-4 w-4/5 border-b border-gray-300 rounded-lg items-center  py-4'>
-                    <h1 className='font-normal text-lg px-4 py-2'>ССЫЛКА НА ИЗОБРАЖЕНИЕ</h1>
+                    <h1 className='font-normal text-lg px-4 py-2'>СУРЕТ ССЫЛКАСЫ</h1>
                     <Input type="text" id=""  size={'sm'} width={'xs'} {...register("service_image")}/>
                 </div>
 
                 <div className='flex flex-col gap-5 w-4/5 border-b border-gray-300 rounded-lg  items-center py-4'>
-                {done && <p className='text-green-500 text-lg'>Запрос совершен!</p>}
-                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Создать</p></Button>         
+                {done && <p className='text-green-500 text-lg'>АҚПАРАТ ЖІБЕРІЛДІ!</p>}
+                    <Button type='submit' background={'#FC9900'} _hover={ {background: "#E4B545"}}><p className='font-light text-xl text-white'>Ашу</p></Button>         
                 </div>
             </form>
         </div>

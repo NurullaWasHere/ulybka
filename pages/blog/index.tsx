@@ -61,7 +61,7 @@ const Blog: FC = () => {
             <CardFooter>
                 <ButtonGroup spacing='1'>
                 <Button variant='solid' colorScheme='blue' onClick={ () => router.push(`/blog/${el.id}`)}>
-                    Редактировать
+                    Өзгерту
                 </Button>
                 </ButtonGroup>
             </CardFooter>
