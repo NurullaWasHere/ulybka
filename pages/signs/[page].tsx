@@ -81,8 +81,8 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                             return (
                                 <>
                                     <Tr>
-                                        <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ () => router.push(`/users/${del.user_id}`)}>{del.user_id === null ? "Нет записанных клиентов" : String(del.fullname)}</Td>
-                                        <Td >{del.phone === null ? "Пусто" : String(del.phone)}</Td>
+                                        <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ () => router.push(`/users/${del.user_id}`)}>{del.user_id === null ? "Берілген уақытқа жазылым жоқ" : String(del.fullname)}</Td>
+                                        <Td >{del.phone === null ? "Бос" : String(del.phone)}</Td>
                                         <Td >{new Date(String(del.signDate)).toLocaleTimeString()}</Td>
                                         <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ async () => {
                                             //@ts-ignore
