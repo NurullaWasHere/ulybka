@@ -26,7 +26,7 @@ const Services: FC = () => {
     useEffect(() => {
         fetchServices()
     }, [])
-    const settings = [{name: "Все сервисы", image: "/user.png"}, {name: 'Создать сервис', image:"/time.png"}]
+    const settings = [{name: "Барлық қызмет", image: "/user.png"}, {name: 'Қызмет қосу', image:"/time.png"}]
     return (
         <div className='w-4/5 bg-whte rounded-lg border-gray-300 mt-10 flex flex-row gap-6 ml-5 bg-white'>
             <div className="flex flex-col gap-5 ml-7 mt-10">

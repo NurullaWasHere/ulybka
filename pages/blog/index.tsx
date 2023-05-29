@@ -6,7 +6,7 @@ import { Blog } from "@/types"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-const settings = [{name: "Все блоги", image: "/user.png"}, {name: 'Создать блог', image:"/time.png"}]
+const settings = [{name: "Барлық блог", image: "/user.png"}, {name: 'Блог қосу', image:"/time.png"}]
 
 const Blog: FC = () => {
 
