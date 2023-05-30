@@ -86,7 +86,7 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
                                         <Td >{new Date(String(del.signDate)).toLocaleTimeString()}</Td>
                                         <Td className="cursor-pointer hover:bg-gray-200 transition duration-300 ease-out" onClick={ async () => {
                                             //@ts-ignore
-                                            await axiosInstance.delete('/sign/deleteSign', {data: {id: del.id}})
+                                            await axiosInstance.post('/sign/deleteSign',  {id: del.id})
                                             console.log(del.id)
                                         }}>Өшіру</Td>
                                     </Tr>
