@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import {
     Table,
     Thead,
@@ -36,7 +36,31 @@ interface IUser_id {
 }
 
 
-const Sign: FC<IResponse> = ({sorted, amount}) => {
+const Sign: FC<IResponse> = () => {
+
+    const [sorted, setSorted] = useState<ISortedSignResponse[]>([])
+    const [amount, setamount] = useState<Number>(1)
+
+
+
+    const {page} = useRouter().query
+
+    const fetchData = async () => { 
+        const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${page}`)
+        const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
+        console.log(res.data.result)
+        console.log(amount.data.amount)
+        setSorted(res.data.result)
+        setamount(amount.data.amount + 1)
+    }
+
+
+    useEffect(() => {
+        fetchData()
+    }, [page])
+
+
+
     const router = useRouter()
     console.log(sorted)
         return (
@@ -105,28 +129,28 @@ const Sign: FC<IResponse> = ({sorted, amount}) => {
     )
 }
 
-export async function getStaticPaths() {
-    const res = []
-    for (let i = 1; i < 100; i++) {
-        res.push({ params: { page: `${i}` } })        
-    }
+// export async function getStaticPaths() {
+//     const res = []
+//     for (let i = 1; i < 100; i++) {
+//         res.push({ params: { page: `${i}` } })        
+//     }
 
-    return {
-      paths: res,
-      fallback: false, // can also be true or 'blocking'
-    }
-  }
+//     return {
+//       paths: res,
+//       fallback: false, // can also be true or 'blocking'
+//     }
+//   }
   
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
-    const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
-    return {
-        props: {
-            sorted: res.data.result,
-            amount: amount.data.amount + 1
-        }
-    }
-}
+// export const getStaticProps: GetStaticProps = async (context) => {
+//     const res = await axiosInstance.get(`/sign/getSignsSortedByDate/${context.params?.page}`)
+//     const amount = await axiosInstance.get(`/sign/getAmountOfPages`)
+//     return {
+//         props: {
+//             sorted: res.data.result,
+//             amount: amount.data.amount + 1
+//         }
+//     }
+// }
 
 export default Sign 
